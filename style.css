@@ -1,44 +1,827 @@
-body {
-    font-family: Arial;
+html{
+    scroll-behavior:smooth;
+}
+
+*{
     margin:0;
-    text-align:center;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background:#ff3c00;
-    color:white;
-    padding:20px;
+body{
+    width:100%;
+    overflow-x:hidden;
 }
 
-nav {
-    background:#222;
-    padding:10px;
+html, body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
 
-nav a {
-    color:white;
-    margin:15px;
-    text-decoration:none;
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial;
 }
 
-#hero {
-    padding:50px;
-    background:#ffe5d0;
+/* Banner */
+.top-banner{
+margin:20px 0;
+    position:relative;
+    width:100%;
+    height:420px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.card {
-    background:#f2f2f2;
-    margin:20px;
-    padding:20px;
+.banner-content{
+    background:rgba(0,0,0,0.6);
+    padding:30px;
     border-radius:10px;
 }
 
-button {
+.banner-content h1{
+    font-size:48px;
+}
+
+.banner-content button{
+    padding:12px 25px;
+    margin-top:15px;
+    background:#25D366;
+    border:none;
+    color:white;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* Offer bar */
+.top-offer{
+    background:black;
+    color:white;
+    padding:10px;
+    font-weight:bold;
+}
+
+/* Navbar */
+nav{
+    background:#ff4d4d;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    font-size:18px;
+    text-decoration:none;
+}
+
+/* Sections */
+section{
+    padding:50px 20px;
+}
+
+/* Cards */
+.card{
+    background:white;
+    width:260px;
+    display:inline-block;
+    padding:20px;
+    margin:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Deals section */
+#deals{
+    background:#fff5ef;
+}
+
+/* Burgers section */
+#burgers{
+    background:#f9f9f9;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
     background:#25D366;
     color:white;
-    padding:15px 25px;
-    border:none;
+    padding:15px 18px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
+}
+
+/* Back to top button */
+#topBtn{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    padding:12px 15px;
     font-size:18px;
+    border:none;
+    border-radius:50%;
+    background:black;
+    color:white;
+    display:none;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:black;
+    color:white;
+    padding:25px;
+}
+
+/* Loader */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    font-size:30px;
+    font-weight:bold;
+}
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .banner-content h1{
+        font-size:30px;
+    }
+
+    .card{
+        width:90%;
+        display:block;
+        margin:20px auto;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .top-banner{
+    position:relative;
+    width:100%;
+    height:420px;        /* full screen nahi, perfect banner height */
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+    section{
+        padding:30px 10px;
+    }
+}
+/* SLIDER */
+/* SLIDER FULL SCREEN */
+.slider{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;   /* ⭐ ye missing tha */
+    bottom:0;  /* ⭐ ye missing tha */
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+
+.banner-content{
+    position:relative;
+    z-index:2;
+    background:rgba(0,0,0,0.6);
+    padding:35px 45px;
+    border-radius:12px;
+    color:white;
+}
+h1,h2,h3,p,nav,footer{
+    text-align:center;
+}
+
+/* CARD HOVER ANIMATION */
+.card{
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Menu slider cards hover */
+.menu-card{
+    transition:0.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+/* BUTTON GLOW ANIMATION */
+button{
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 15px #25D366, 0 0 30px #25D366;
+}
+
+/* WhatsApp floating button glow */
+.whatsapp-float:hover{
+    box-shadow:0 0 20px #25D366, 0 0 40px #25D366;
+}
+/* TOP HEADER BAR */
+.top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo img{
+    height:45px;
+}
+.cart {
+    position: relative;
+    font-size: 18px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+/* BIG ORDER CTA BANNER */
+.cta-banner{
+    background:linear-gradient(45deg,#ff4d4d,#ff7b00);
+    color:white;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.cta-banner h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.cta-banner p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.cta-banner button{
+    background:#25D366;
+    border:none;
+    padding:15px 35px;
+    font-size:20px;
+    color:white;
     border-radius:8px;
     cursor:pointer;
+}
+/* REVIEWS SECTION */
+.reviews{
+    padding:70px 20px;
+    background:#f5f5f5;
+    text-align:center;
+}
+
+.review-card{
+    display:inline-block;
+    width:280px;
+    background:white;
+    padding:25px;
+    margin:15px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+/* FOOD GALLERY */
+.gallery{
+    padding:70px 0;
+    background:white;
+    overflow:hidden;
+}
+
+.gallery-track{
+    display:flex;
+    gap:20px;
+    animation:scrollGallery 15s linear infinite;
+}
+
+.gallery-track img{
+    width:300px;
+    border-radius:15px;
+}
+
+@keyframes scrollGallery{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-800px); }
+}
+/* NEW DEALS DESIGN */
+.deals-section{
+    padding:70px 20px;
+    background:#fff5ef;
+}
+
+.deal-box{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:white;
+    margin:30px auto;
+    max-width:900px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.deal-box img{
+    width:50%;
+}
+
+.deal-info{
+    padding:30px;
+}
+
+.deal-info h3{
+    font-size:28px;
+}
+
+.deal-info p{
+    font-size:20px;
+    margin:15px 0;
+}
+/* ===== MENU GRID ===== */
+.menu-grid{
+    padding:50px 20px;
+    background:#fff;
+    text-align:center;
+}
+
+.grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.grid-card{
+    width:200px;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    background:white;
+    box-shadow:0 0 12px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.grid-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.grid-card h3{
+    padding:12px;
+    font-size:18px;
+}
+
+.grid-card:hover{
+    transform:translateY(-8px);
+}
+/* Hover effect */
+.menu-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+/* ========= EXPLORE MENU FINAL SLIDER ========= */
+
+#explore{
+    background:#f6f6f6;
+    padding:70px 0;
+    text-align:center;
+}
+
+.menu-container{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    padding:30px 40px;
+    scroll-behavior:smooth;
+    align-items:stretch;
+}
+
+.menu-container::-webkit-scrollbar{
+    display:none;
+}
+
+.menu-card{
+    min-width:260px;
+    background:white;
+    padding:15px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s;
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+}
+.menu-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+.menu-card h3{
+    margin-top:12px;
+    font-size:20px;
+    font-weight:bold;
+    color:#222;
+}
+.order-btn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.cart-box{
+  background:white;
+  width:90%;
+  max-width:420px;
+  padding:20px;
+  border-radius:12px;
+  text-align:left;
+}
+
+.cart-box h2{text-align:center;}
+
+#cartItems div{
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+}
+
+.cart-box input,
+.cart-box textarea{
+  width:100%;
+  margin:8px 0;
+  padding:10px;
+}
+
+.cart-box button{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  background:#25D366;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.close-btn{
+  background:#ccc !important;
+  color:black !important;
+}
+/* CART POPUP FINAL FIX */
+.cart-box{
+    background:white;
+    width:90%;
+    max-width:420px;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+/* ===== FINAL CART MODAL ===== */
+#cartModal{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    width:100vw !important;
+    height:100vh !important;
+    background:rgba(0,0,0,0.7) !important;
+    display:none;
+    justify-content:center !important;
+    align-items:center !important;
+    z-index:99999 !important;
+}
+
+.cart-box{
+    background:white;
+    width:90%;
+    max-width:420px;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+/* ===== CART POPUP FINAL DESIGN ===== */
+
+.cart-box{
+    background:white;
+    width:95%;
+    max-width:420px;
+    padding:25px;
+    border-radius:14px;
+    text-align:left;
+}
+
+/* Cart item row */
+#cartItems div{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin:12px 0;
+}
+
+/* Item title */
+#cartItems b{
+    font-size:18px;
+}
+
+/* Quantity buttons group */
+.qty-controls{
+    display:flex;
+    gap:8px;
+}
+
+/* Small round buttons */
+.qty-btn{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:8px;
+    background:#f1f1f1;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Remove button */
+.remove-btn{
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:6px 10px;
+    cursor:pointer;
+}
+
+/* Total text */
+#cartTotal{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* Inputs */
+.cart-box input,
+.cart-box textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+/* Checkout button */
+.cart-box button{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border:none;
+    border-radius:8px;
+    background:#25D366;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* Close button */
+.close-btn{
+    background:#ddd !important;
+    color:black !important;
+}
+/* NAVBAR MENU */
+.nav-menu{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.nav-menu a:hover{
+    color:#ff4d4d;
+}
+
+/* Make header sticky */
+.top-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Mobile navbar */
+@media(max-width:768px){
+    .nav-menu{
+        display:none;
+    }
+}
+/* CONTACT SECTION */
+.contact-section{
+    padding:70px 20px;
+    background:#f9f9f9;
+    text-align:center;
+}
+
+.contact-box{
+    max-width:1000px;
+    margin:40px auto;
+    display:flex;
+    gap:40px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.contact-info{
+    text-align:left;
+    max-width:350px;
+}
+
+.contact-info h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.contact-info p{
+    margin:8px 0;
+    font-size:18px;
+}
+
+.map-box{
+    width:400px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+#categories{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+
+#categories button{
+  padding:10px 18px;
+  border:none;
+  background:#ff5722;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+#menuItems{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.itemCard{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+/* ADMIN PANEL & CART POPUP FIX */
+.cart-modal{
+  display:none;              /* page load par hidden */
+  position:fixed;            /* page ke upar float kare */
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+}
+
+.cart-box{
+  background:white;
+  width:350px;
+  padding:20px;
+  border-radius:12px;
+  margin:80px auto;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+.cart-box{
+  max-height:80vh;
+  overflow-y:auto;
+}
+/* CATEGORY BUTTONS */
+#categories{
+  text-align:center;
+  margin:20px;
+}
+
+.catBtn{
+  padding:10px 18px;
+  margin:5px;
+  border:none;
+  background:#ff3b3b;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* MENU GRID */
+#menuItems{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+/* FOOD CARD */
+.food-card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.food-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.food-card button{
+  background:#00c853;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:10px;
 }
