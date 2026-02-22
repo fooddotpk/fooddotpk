@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Dot PK | Lahore Fast Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Loader -->
+<div id="loader">
+   <h1>Food Dot PK 🍔</h1>
+</div>
+<!-- TOP HEADER BAR -->
+<div class="top-header">
+
+    <div class="logo">
+        <img src="logo.png">
+        <span>Food Dot PK</span>
+    </div>
+
+
+
+    <div class="header-right">
+        <span class="cart" onclick="openCart()">🛒 Cart <span class="cart-badge">0</span></span>
+</div>
+
+</div>
+
+<!-- Banner -->
+<header class="top-banner">
+
+    <div class="slider">
+    <img src="slide1.jpg" class="slide active">
+    <img src="slide2.jpg" class="slide">
+    <img src="slide3.jpg" class="slide">
+</div>
+
+</header>
+
+
+<div class="top-offer">
+                             🔥 Free Delivery —  on Orders Above Rs 599 </div>
+<!-- ================= MENU SECTION ================= -->
+<section id="menu">
+
+   <h2 style="text-align:center;">Explore Menu</h2>
+
+   <div id="categories"></div>
+
+   <div class="viewAllBtn" style="text-align:center; margin-top:20px;">
+      <button onclick="showAll()">View Full Menu</button>
+   </div>
+
+   <div id="menuItems"></div>
+
+<!-- ADMIN PANEL -->
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="cart-modal">
+  <div class="cart-box">
+
+    <h2>Admin Panel ⚙</h2>
+
+    <input id="pName" placeholder="Product Name">
+    <input id="pPrice" placeholder="Price">
+    <input type="file" id="pImageFile">
+<select id="pCategory"></select>
+
+<hr>
+<h3>📂 Add Category</h3>
+
+<input id="newCategoryName" placeholder="Category name">
+<button onclick="addCategory()">Add Category</button>
+<hr>
+
+    <button onclick="addProduct()">Add Product</button>
+    <button class="close-btn" onclick="closeAdmin()">Close</button>
+
+    <hr>
+    <h3>Products List</h3>
+    <div id="adminProducts"></div>
+
+  </div>
+</div>
+
+</section>
+<section class="reviews">
+
+    <h2>Customer Reviews ⭐⭐⭐⭐⭐</h2>
+
+    <div class="review-card">
+        <p>"Best Zinger in Lahore! 🔥"</p>
+        <h4>Ali Khan</h4>
+    </div>
+
+    <div class="review-card">
+        <p>"Fast delivery & tasty food 😍"</p>
+        <h4>Sana Ahmed</h4>
+    </div>
+
+    <div class="review-card">
+        <p>"My favourite burger spot!"</p>
+        <h4>Usman</h4>
+    </div>
+
+</section>
+<section class="gallery">
+
+    <h2>Food Gallery 📸</h2>
+
+    <div class="gallery-track">
+    <img src="slide1.jpg">
+    <img src="slide2.jpg">
+    <img src="slide3.jpg">
+    <img src="patty.jpg">
+</div>
+
+</section>
+
+<button onclick="topFunction()" id="topBtn">⬆</button>
+<a href="https://wa.me/923049589788" class="whatsapp-float">💬</a>
+<!-- CART POPUP -->
+<footer>
+    <h3>Food Dot PK</h3>
+    <p>Lahore's Fastest Food Delivery</p>
+    <p>WhatsApp: 03049589788</p>
+    <p><p>© <span id="year"></span> Food Dot PK</p>
+</p>
+</footer>
+
+<!-- CART MODAL -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-box">
+    <h2>Your Cart 🛒</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>Total: Rs <span id="cartTotal">0</span></h3>
+
+    <input type="text" id="custName" placeholder="Your Name">
+    <input type="text" id="custPhone" placeholder="Phone Number">
+    <textarea id="custAddress" placeholder="Delivery Address"></textarea>
+
+    <h3>Select Payment Method</h3>
+    <select id="paymentMethod">
+      <option>Cash on Delivery</option>
+      <option>JazzCash / EasyPaisa</option>
+    </select>
+
+    <p style="font-size:14px;color:#666;">
+      For JazzCash/EasyPaisa send payment to: 03049589788
+    </p>
+
+    <button onclick="checkoutWhatsApp()">Checkout on WhatsApp</button>
+    <button class="close-btn" onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<!-- LOADER SCRIPT -->
+<script>
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display = "none";
+});
+</script>
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<!-- Firebase CONFIG (ADD THIS) -->
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyANsLR_ga0xLpBNtoBXZaz2hqI4iyFKDkg",
+  authDomain: "rapid-stage-487315-c1.firebaseapp.com",
+  projectId: "rapid-stage-487315-c1",
+  storageBucket: "rapid-stage-487315-c1.firebasestorage.app",
+  messagingSenderId: "407935577400",
+  appId: "1:407935577400:web:fad1840c993a86b119e5cd"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Create Firestore database connection
+const db = firebase.firestore();
+</script>
+
+<script src="script.js"></script>
+<script src="menu-data.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>
